@@ -1,5 +1,6 @@
 import { Card } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import { calculateTotal } from "../helper/PizzaPriceCalculator";
 import { Pizza } from "../types/Pizza";
 import { ThePizza } from "./ThePizza";
 
@@ -25,6 +26,7 @@ export function BasketContains(props: Props) {
                             />
                             )
                         })}
+                    <Typography>Total: £{calculateTotal(props.pizzas)}</Typography>
                 </>
             )}
             </Card>

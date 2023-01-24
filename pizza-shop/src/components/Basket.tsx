@@ -1,4 +1,4 @@
-import { Badge, IconButton, Popover, Typography } from "@mui/material";
+import { Badge, IconButton, Popover } from "@mui/material";
 import { Pizza } from "../types/Pizza";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useState } from "react";
