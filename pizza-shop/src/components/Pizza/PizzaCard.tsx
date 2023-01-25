@@ -1,8 +1,8 @@
 import { Button, Card, Container, Typography } from "@mui/material";
 import { useState } from "react";
-import { Pizza } from "../types/Pizza";
-import { ThePizza } from "./ThePizza";
-import { Toppings } from "./Toppings";
+import { Pizza } from "../../types/Pizza";
+import { PizzaItem } from "./PizzaItem";
+import { Toppings } from "../Toppings/Toppings";
 
 interface Props{
     pizzas: Pizza[]
@@ -24,12 +24,14 @@ export function PizzaCard(props: Props) {
             <Typography>Large = 5 toppings £13.99</Typography>
         </Container>
         <Toppings setToppings={setToppings} toppings={toppings}/>
-        <ThePizza toppings={toppings} setToppings={setToppings}/>
-        <Button onClick={() => {
-            props.setPizzas([...props.pizzas, pizza ]);
-            console.log("ok");
-            props.setPizzaId(props.pizzaId+1);
-            }}>
+        <PizzaItem toppings={toppings} setToppings={setToppings}/>
+        <Button 
+          variant="contained" 
+          onClick={() => {
+              props.setPizzas([...props.pizzas, pizza ]);
+              props.setPizzaId(props.pizzaId+1);
+              }}
+        >
                 Add to basket
         </Button>
       </Card>

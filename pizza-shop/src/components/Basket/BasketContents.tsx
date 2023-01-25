@@ -1,8 +1,8 @@
 import { Card } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { calculateTotal } from "../helper/PizzaPriceCalculator";
-import { Pizza } from "../types/Pizza";
-import { ThePizza } from "./ThePizza";
+import { calculateTotal } from "../../helper/PizzaPriceCalculator";
+import { Pizza } from "../../types/Pizza";
+import { PizzaItem } from "../Pizza/PizzaItem";
 
 interface Props {
     pizzas: Pizza[];
@@ -17,16 +17,16 @@ export function BasketContains(props: Props) {
                 <>
                     {props.pizzas.map((pizza, key) => {
                         return (
-                            <ThePizza 
+                            <PizzaItem 
                                 toppings={pizza.toppings}
                                 setPizzas={props.setPizzas}
-                                pizzaId={pizza.id}
+                                pizza={pizza}
                                 pizzas={props.pizzas}
                                 key={key} 
                             />
                             )
                         })}
-                    <Typography>Total: £{calculateTotal(props.pizzas)}</Typography>
+                    <Typography sx={{fontWeight: "bold"}}>Total: £{calculateTotal(props.pizzas)}</Typography>
                 </>
             )}
             </Card>

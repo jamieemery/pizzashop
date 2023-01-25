@@ -1,5 +1,5 @@
 import { Badge, IconButton, Popover } from "@mui/material";
-import { Pizza } from "../types/Pizza";
+import { Pizza } from "../../types/Pizza";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useState } from "react";
 import { BasketContains } from "./BasketContents";
@@ -22,7 +22,7 @@ export function Basket(props: Props) {
                 </Badge>
             </IconButton>
             <Popover
-                id=""
+                id={id}
                 open={open}
                 anchorEl={anchorEl}
                 onClose={() => setAnchorEl(null)}

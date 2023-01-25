@@ -1,5 +1,5 @@
 import { Chip, Container } from "@mui/material"
-import { ToppingColour } from "../enums/ToppingColourChip";
+import { ToppingColour } from "../../enums/ToppingColourChip";
 
 interface Props{
     toppings: string[],
