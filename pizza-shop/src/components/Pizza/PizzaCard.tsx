@@ -27,6 +27,7 @@ export function PizzaCard(props: Props) {
         <PizzaItem toppings={toppings} setToppings={setToppings}/>
         <Button 
           variant="contained" 
+          disabled={toppings.length === 0}
           onClick={() => {
               props.setPizzas([...props.pizzas, pizza ]);
               props.setPizzaId(props.pizzaId+1);
